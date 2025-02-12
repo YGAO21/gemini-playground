@@ -46,7 +46,19 @@ export class AudioRecorder {
                     sampleRate: this.sampleRate
                 } 
             });
-            
+            facingMode: "environment",this.stream = await navigator.mediaDevices.getUserMedia({
+
+video: {
+
+facingMode: "environment",
+
+width: { ideal: this.options.width },
+
+height: { ideal: this.options.height }
+
+}
+
+});
             this.audioContext = new AudioContext({ sampleRate: this.sampleRate });
             this.source = this.audioContext.createMediaStreamSource(this.stream);
 
